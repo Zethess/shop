@@ -1,0 +1,125 @@
+:root{ 
+	/* Colors */
+	/* Primary */
+	--pink: hsl(322, 100%, 66%);
+  --light-pink: hsl(321, 100%, 78%);
+  --light-red: hsl(0, 100%, 63%);
+  
+	/* Neutral */
+	--white: hsl(0, 0%, 100%);
+	--very-dark-cyan: hsl(192, 100%, 9%);
+  --very-pale-blue: hsl(207, 100%, 98%);
+
+  --font-family: 'Libre Franklin', sans-serif;
+}
+*{
+	box-sizing: border-box; 
+	margin: 0;
+	padding: 0;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+ul, li, nav {
+    list-style: none;
+    text-decoration: none;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 12% 10px 12%;
+}
+.learn-main{
+    height: 300px;
+    background-image: url('../img/hero.jpg');
+    background-size: cover;
+    width: 100vw;
+    color: white;
+    text-align: left;
+    padding: 70px 30px 40px 30px ;
+}
+.learn-main h2{
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.learn-main p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.formulario{
+    position: relative;
+}
+.input-learn{
+    width: 100%;
+    height: 40px;
+}
+.input-learn-submit{
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.learn-info{
+    background-image: linear-gradient(to right,rgba(119,31,81,255), rgba(226,77,83,255));
+    padding: 50px 30px 7px 30px;
+    color: white;
+}
+.learn-info ul li{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 50px;
+}
+.learn-info ul li img{
+    height: 38px;
+    margin-right: 20%;
+}
+.learn-info-first-img{
+    width: 31px;
+}
+.learn-info-third-img{
+    width: 35px;
+}
+.learn-info ul li p{
+    line-height: 1.5;
+    font-size: 15px;
+}
+.course-card{
+    background-color: rgb(236, 231, 231);
+    width: 100vw;
+}
+.course-card h1{
+    padding: 20px 0px;
+    font-size: 40px;
+}
+.card{
+    background-color: white;
+    margin: 20px 40px;
+}
+.card-main-images{
+    width: 100%;
+}
+.card h2{
+    font-weight: bold;
+    font-size: 17px;
+    margin: 10px 0px;
+}
+.info img{
+    margin: 10px 0px;
+} 
+.price{
+    margin-bottom: 10px;
+    /* display: flex; */
+    text-align: right;
+}
+.price s{
+    text-align: center;
+}
+

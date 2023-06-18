@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carrito</title>
+    <script src="https://kit.fontawesome.com/5cdd7f70f3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="root">
+        <header>
+            <div class="header">
+                <div class="logo"><img src="assets/img/logo.jpg" alt="logo"></div>
+                <div class="cart-shopping">
+                    <a href="#"><img src="assets/img/cart.png" alt=""></a>
+                    <!-- <div class="shopping-info">
+                        <table>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </table>
+                        <hr>
+                        <button class="empty-shopping-car">Vaciar carrito</button>
+                    </div> -->
+                </div>
+            </div>
+        </header>
+        <div class="main-content">
+            <section>
+            <div class="learn-main">
+                <h2>Aprende algo nuevo</h2>
+                <p>Todos los cursos a $15</p>
+                <form action="#" id="busqueda" method="post" class="formulario">
+                    <input type="text" class="input-learn" placeholder="¿Que te gustaría Aprender?">
+                    <input type="image" src="assets/img/lupa.png" class="input-learn-submit" id="learn-submit">
+                </form>
+            </div>
+            <div class="learn-info">
+                <ul>
+                    <li>
+                        <img src="assets/img/icono1.png" alt="" class="learn-info-first-img">
+                        <p>20,000 Cursos en línea <br>
+                        Explora  los temas más recientes</p>
+                    </li>
+                    <li>
+                        <img src="assets/img/icono2.png" alt="" class="learn-info-second-img">
+                        <p>Instructores Expertos <br>
+                        Aprende con distintos estilos</p>
+                    </li>
+                    <li>
+                        <img src="assets/img/icono3.png" alt="" class="learn-info-third-img">
+                        <p>Acceso de por vida <br>
+                            Aprende a tu ritmo</p>
+                    </li>
+                </ul>
+            </div>
+            </section>
+            <section>
+                <div class="course-card">
+                    <h1>Cursos En Línea</h1>
+                    <div class="card-flex card-grid">
+                        <div class="first-card card">
+                            <img src="assets/img/curso1.jpg" class="card-main-images" alt="">
+                            <div class="first-card-info info">
+                                <h2>HTML5,CSS3,JavaScript para Principi</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="fisrt-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="first-card-button">AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="second-card card">
+                            <img src="assets/img/curso2.jpg" class="card-main-images" alt="">
+                            <div class="second-card-info info">
+                                <h2>Curso de comida Vegetariana</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="second-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="second-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="third-card card">
+                            <img src="assets/img/curso3.jpg" class="card-main-images" alt="">
+                            <div class="third-card-info info">
+                                <h2>Guitarra para principiantes</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="third-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="third-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="fourth-card card">
+                            <img src="assets/img/curso4.jpg" class="card-main-images" alt="">
+                            <div class="fourth-card-info info">
+                                <h2>Huerto en tu casa</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="fourth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="fourth-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="fifth-card card">
+                            <img src="assets/img/curso5.jpg" class="card-main-images" alt="">
+                            <div class="fifth-card-info info">
+                                <h2>Decoración con productos de tu hogar</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="fifth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="fifth-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="sixth-card card">
+                            <img src="assets/img/curso1.jpg" class="card-main-images" alt="">
+                            <div class="sixth-card-info info">
+                                <h2>HTML5,CSS3,JavaScript para Principi</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="sixth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="sixth-card-button">AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                        <div class="seventh-card card">
+                            <img src="assets/img/curso2.jpg" class="card-main-images" alt="">
+                            <div class="seventh-card-info info">
+                                <h2>Curso de comida Vegetariana</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="seventh-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="seventh-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="eighth-card">
+                            <img src="assets/img/curso3.jpg" class="card-main-images" alt="">
+                            <div class="eighth-card-info info">
+                                <h2></h2>
+                                <p></p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="eighth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="eighth-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="nineth-card card">
+                            <img src="assets/img/curso4.jpg" class="card-main-images" alt="">
+                            <div class="nineth-card-info info">
+                                <h2>Guitarra para principiantes</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="nineth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="nineth-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="tenth-card card">
+                            <img src="assets/img/curso5.jpg" class="card-main-images" alt="">
+                            <div class="tenth-card-info info">
+                                <h2>Huerto en tu casa</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="tenth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="tenth-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="eleventh-card card">
+                            <img src="assets/img/curso1.jpg" class="card-main-images" alt="">
+                            <div class="eleventh-card-info info">
+                                <h2>Decoración con productos de tu hogar</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="eleventh-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="eleventh-card-button">Agregar al carrito</button>
+                            </div>
+                        </div>
+                        <div class="twelfth-card">
+                            <img src="assets/img/curso2.jpg" class="card-main-images" alt="">
+                            <div class="twelfth-card-info info">
+                                <h2>HTML5,CSS3,JavaScript para Principi</h2>
+                                <p>Juan Pedro</p>
+                                <img src="assets/img/estrellas.png" alt="">
+                                <div class="twelfth-card-price price">
+                                    <span class="first-span"><s>$200</s></span>
+                                    <span class="second-span">15$</span>
+                                </div>
+                                <button class="twelfth-card-button">AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <hr>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="menu">
+                <nav id="principal" class="menu">
+                    <a class="enlace" href="#">Para tu Negocio</a>
+                    <a class="enlace" href="#">Conviertete en Instructor</a>
+                    <a class="enlace" href="#">Aplicaciones Móviles</a>
+                    <a class="enlace" href="#">Soporte</a>
+                    <a class="enlace" href="#">Temas</a>
+                    <a class="enlace" href="#">¿Quienes Somos?</a>
+                    <a class="enlace" href="#">Empleo</a>
+                    <a class="enlace" href="#">Blog</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
