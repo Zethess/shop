@@ -42,15 +42,13 @@ ul, li, nav,a {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
-    height: 400px;
+    min-height: 100px;
     width: 100%;
-    max-width: 400px;
+    width: 400px;
     background-color: white;
     top: 70px;
     right: 190px;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-bottom: 20px;
   }
   
   .cart-shopping:hover .shopping-info {
@@ -60,43 +58,32 @@ ul, li, nav,a {
     
   }
   .shopping-info table{
-    width: 100%;
-    
+    padding: 10px;
   }
   .shopping-info tr {
-    
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 0.8fr 0.8fr 0.8fr;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 15px;
+    padding-bottom: 5px;
     border-bottom: 1px solid gray;
-    padding-bottom: 10px;
+
   }
   .shopping-info td {
-    display: flex;
-    align-items: center;
-    text-align: left;
     width: 100%;
-    max-width: 150px;
-  }
-  .x-element{
-    width: 20px;
-  }
-  .price-td{
-    padding-left: 10px;
-    padding-right: 12px;
-  }
-  .amount-td{
-    padding-left: 65px;
-    padding-right: 35px;
+    font-size: 14px;
+    padding: 5px 0px;
   }
   .shopping-info button{
-    /* margin: 0px 50px; */
-    width: 100% ;
+    width: 95% ;
     height: 40px;
     background-color: white;
     outline: none;
     border: solid 1px gray;
     border-radius: 5px;
     margin-top: 20px;
+    margin: 0px 10px;
   }
    
 .learn-main{

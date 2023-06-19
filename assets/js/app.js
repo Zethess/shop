@@ -7,7 +7,17 @@ let articlesInCart = [];
 
 loadEventListeners();
 function loadEventListeners(){
+    //Cuando agragas un curso presionando "Agregar al Carrito"
     courseList.addEventListener('click',courseAdd);
+
+    //Eliminando cursos del carrito
+    carrito.addEventListener('click',deleteCourse);
+
+    //Vaciar el carrito
+    emptyCartBtn.addEventListener('click', ()=>{
+        articlesInCart = [];
+        cleanCartHTML();
+    })
 }
 
 function courseAdd(e){
@@ -16,13 +26,26 @@ function courseAdd(e){
     if( e.target.classList.contains('add-course')){
         const selectedCourse = e.target.parentElement.parentElement;
         readCourseInfo( selectedCourse );
-    // Obtener los datos del curso que deseas agregar al carrito
-    // const courseName = course.querySelector('h4').textContent;
-    // const coursePrice = course.querySelector('.price').textContent;
-    // console.log('nombre' + courseName + 'y precio' + coursePrice);
     }
 }
 
+//Elimina un curso del carrito
+function deleteCourse(e) {
+    if(e.target.classList.contains('delete-course')){
+        const courseId = e.target.getAttribute('data-id');
+        const courseAux = articlesInCart.find(course => course.id === courseId);
+        if( courseAux.amount > 1){
+            const courseIndex = articlesInCart.findIndex(course => course.id === courseId);
+            articlesInCart[courseIndex].amount =  courseAux.amount -1;
+            // console.log( articlesInCart[courseIndex]);
+        }else{
+            //Elimina del arreglo de articlesInCart por el data-id
+            //creara un nuevo array, cogiendo todos aquellos elementos que no coincida con lo indicado en el filter
+            articlesInCart = articlesInCart.filter( course => course.id !== courseId);
+        }
+        cartHTML();
+    }
+}
 
 //Lee el contenido del HTML al que le dimos click y extrae la informacion del curso
 function readCourseInfo( course) {
@@ -89,16 +112,12 @@ function cartHTML(){
         //Agrega el HTML del carrito en el tbody
         cartContainer.appendChild(row);
 
-        const coursePriceElement = row.querySelector('.course-price');
-        const courseAmountElement = row.querySelector('.course-amount');
-        coursePriceElement.classList.add('price-td');
-        courseAmountElement.classList.add('amount-td');
     });
+}
 //Elimina los cursos del tbody
 function cleanCartHTML(){
     //Si existe el primer elemento, ejecutara el codigo
     while(cartContainer.firstChild){
         cartContainer.removeChild(cartContainer.firstChild)
     }
-}
 }
