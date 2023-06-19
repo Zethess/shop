@@ -1,9 +1,8 @@
 :root{ 
 	/* Colors */
 	/* Primary */
-	--pink: hsl(322, 100%, 66%);
-  --light-pink: hsl(321, 100%, 78%);
-  --light-red: hsl(0, 100%, 63%);
+    --background-course: rgb(244, 236, 236);
+    --button-color: rgb(74, 173, 230);
   
 	/* Neutral */
 	--white: hsl(0, 0%, 100%);
@@ -19,7 +18,7 @@
     font-weight: 500;
     font-family: var(--font-family);
 }
-ul, li, nav {
+ul, li, nav,a {
     list-style: none;
     text-decoration: none;
 }
@@ -29,6 +28,77 @@ ul, li, nav {
     justify-content: space-between;
     margin: 20px 12% 10px 12%;
 }
+
+.delete-course {
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.cart-shopping .shopping-info {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    top: 70px;
+    right: 190px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .cart-shopping:hover .shopping-info {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    
+  }
+  .shopping-info table{
+    width: 100%;
+    
+  }
+  .shopping-info tr {
+    
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+  }
+  .shopping-info td {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    max-width: 150px;
+  }
+  .x-element{
+    width: 20px;
+  }
+  .price-td{
+    padding-left: 10px;
+    padding-right: 12px;
+  }
+  .amount-td{
+    padding-left: 65px;
+    padding-right: 35px;
+  }
+  .shopping-info button{
+    /* margin: 0px 50px; */
+    width: 100% ;
+    height: 40px;
+    background-color: white;
+    outline: none;
+    border: solid 1px gray;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+   
 .learn-main{
     height: 300px;
     background-image: url('../img/hero.jpg');
@@ -92,8 +162,9 @@ ul, li, nav {
     font-size: 15px;
 }
 .course-card{
-    background-color: rgb(236, 231, 231);
+    background-color: var(--background-course);
     width: 100vw;
+    padding-bottom: 30px;
 }
 .course-card h1{
     padding: 20px 0px;
@@ -103,6 +174,17 @@ ul, li, nav {
     background-color: white;
     margin: 20px 40px;
 }
+.card button{
+    margin-bottom: 20px;
+    width: 100%;
+    height: 35px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+}
 .card-main-images{
     width: 100%;
 }
@@ -111,15 +193,103 @@ ul, li, nav {
     font-size: 17px;
     margin: 10px 0px;
 }
+.info{
+    margin: 20px;
+}
 .info img{
     margin: 10px 0px;
 } 
 .price{
+    position: relative;
     margin-bottom: 10px;
     /* display: flex; */
     text-align: right;
 }
-.price s{
-    text-align: center;
+.first-span{
+    position: absolute;
+    left: 43%;
 }
+.second-span{
+    font-weight: bold;
+    font-size: 18px;
+}
+.container{
+    background-color: var(--background-course);
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 30px 0px;
+    
+    gap: 10px;
+}
+.menu a{
+    cursor: pointer;
+    color: var(--button-color);
+}
+button:hover{
+    cursor: pointer;
+    transform: translate(-1px, -1px);
+  }
+  button:active{
+    transform: translate(1px,1px);
+  }
+  .card button:hover{
+    opacity: 0.7;
+  }
+@media screen and (min-width: 700px){
+    .learn-main{
+        padding-left: 10%;
+    }
+    .input-learn{
+        width: 430px;
+    }
+    .input-learn-submit{
+        position: absolute;
+        top: 10px;
+        left: 380px;
+    }
+    .learn-info ul{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-items: center;
+    }
+    .learn-info ul li img{
+        margin-right: 30px;
+    }
+    .course-card{
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+        max-width: 2000px;
+        gap: 20px 20px;
+    }
+    .card{
+        margin:0px 0px;
+        /* max-width: 400px; */
+    }
+    .container{
+        /* width: 100vw; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu{
+        width: 100%;
+        max-width: 2000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,400px);
+    }
+
+}
+
 
