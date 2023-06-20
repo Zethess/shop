@@ -28,11 +28,10 @@ ul, li, nav,a {
     justify-content: space-between;
     margin: 20px 12% 10px 12%;
 }
-
 .delete-course {
     background-color: red;
     border-radius: 50%;
-    padding: 5px 10px;
+    padding: 5px 8px;
     text-decoration: none;
     color: white;
     font-weight: bold;
@@ -44,39 +43,46 @@ ul, li, nav,a {
     transition: visibility 0.3s, opacity 0.3s;
     min-height: 100px;
     width: 100%;
-    width: 400px;
+    width: 300px;
     background-color: white;
     top: 70px;
-    right: 190px;
+    right: 10px;
     padding-bottom: 20px;
-  }
-  
-  .cart-shopping:hover .shopping-info {
+}
+
+.cart-shopping:hover .shopping-info {
     visibility: visible;
     opacity: 1;
     z-index: 1;
-    
-  }
-  .shopping-info table{
+
+}
+.shopping-info table{
     padding: 10px;
-  }
-  .shopping-info tr {
+}
+.shopping-info tr {
     display: grid;
-    grid-template-columns: 1fr 1.6fr 0.8fr 0.8fr 0.8fr;
+    grid-template-columns: 0.6fr 1.5fr 0.9fr 0.9fr 0.9fr;
     justify-items: center;
     align-items: center;
-    grid-gap: 15px;
+    grid-gap: 10px;
     padding-bottom: 5px;
     border-bottom: 1px solid gray;
 
-  }
-  .shopping-info td {
+}
+.shopping-info td img{
+    width: 60px;
+}
+.course-price{
+    font-size: 12px;
+}
+
+.shopping-info td {
     width: 100%;
     font-size: 14px;
     padding: 5px 0px;
-  }
-  .shopping-info button{
-    width: 95% ;
+}
+.shopping-info button{
+    width: 93% ;
     height: 40px;
     background-color: white;
     outline: none;
@@ -84,8 +90,7 @@ ul, li, nav,a {
     border-radius: 5px;
     margin-top: 20px;
     margin: 0px 10px;
-  }
-   
+}
 .learn-main{
     height: 300px;
     background-image: url('../img/hero.jpg');
@@ -246,6 +251,28 @@ button:hover{
     }
     .learn-info ul li img{
         margin-right: 30px;
+    }
+    .delete-course {
+        padding: 5px 10px;
+    }
+    .cart-shopping .shopping-info {
+        width: 400px;
+        right: 190px;
+    }
+
+    .shopping-info tr {
+        grid-template-columns: 1fr 1.6fr 0.8fr 0.8fr 0.8fr;
+        grid-gap: 15px;
+    } 
+
+    .shopping-info button{
+        width: 95% ;
+    }
+    .shopping-info td img{
+        width: 80px;
+    }
+    .course-price{
+        font-size: 14px;
     }
     .course-card{
         padding: 20px 20px;
