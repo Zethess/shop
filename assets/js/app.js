@@ -13,6 +13,12 @@ function loadEventListeners(){
     //Eliminando cursos del carrito
     carrito.addEventListener('click',deleteCourse);
 
+    //Muestra los cursos de Local Storage si no hay nada, no muestra nada. El evento es cuando la pagina se cargo completamente
+    document.addEventListener('DOMContentLoaded',()=>{
+        articlesInCart = JSON.parse(localStorage.getItem('articlesInCart')) || [];
+        cartHTML();
+    })
+
     //Vaciar el carrito
     emptyCartBtn.addEventListener('click', ()=>{
         articlesInCart = [];
@@ -113,6 +119,13 @@ function cartHTML(){
         cartContainer.appendChild(row);
 
     });
+
+    //Agregar el carrito de compras al Storage
+    sincronizarStorage();
+}
+
+function sincronizarStorage(){
+    localStorage.setItem('articlesInCart',JSON.stringify(articlesInCart));
 }
 //Elimina los cursos del tbody
 function cleanCartHTML(){
