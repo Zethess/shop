@@ -3,6 +3,7 @@ const carrito = document.querySelector('#carrito');
 const cartContainer = document.querySelector('#shopping-list tbody');
 const emptyCartBtn = document.querySelector('#empty-cart');
 const courseList = document.querySelector('#course-list');
+var cartCount = document.getElementById("cart-shopping-count").innerHTML;
 let articlesInCart = [];
 
 loadEventListeners();
@@ -22,6 +23,8 @@ function loadEventListeners(){
     //Vaciar el carrito
     emptyCartBtn.addEventListener('click', ()=>{
         articlesInCart = [];
+        vaciado = true;
+        decreaseCartCount(vaciado);
         cleanCartHTML();
     })
 }
@@ -30,8 +33,10 @@ function courseAdd(e){
 
     // console.log(e.target);
     if( e.target.classList.contains('add-course')){
+        increaseCartCount();
         const selectedCourse = e.target.parentElement.parentElement;
         readCourseInfo( selectedCourse );
+
     }
 }
 
@@ -40,6 +45,8 @@ function deleteCourse(e) {
     if(e.target.classList.contains('delete-course')){
         const courseId = e.target.getAttribute('data-id');
         const courseAux = articlesInCart.find(course => course.id === courseId);
+        const vaciado = false;
+        decreaseCartCount(vaciado);
         if( courseAux.amount > 1){
             const courseIndex = articlesInCart.findIndex(course => course.id === courseId);
             articlesInCart[courseIndex].amount =  courseAux.amount -1;
@@ -132,5 +139,19 @@ function cleanCartHTML(){
     //Si existe el primer elemento, ejecutara el codigo
     while(cartContainer.firstChild){
         cartContainer.removeChild(cartContainer.firstChild)
+    }
+}
+
+function increaseCartCount(){
+    cartCount += 1;
+    document.getElementById("cart-shopping-count").innerHTML = cartCount;
+}
+function decreaseCartCount( vaciar ){
+    if ( vaciar ) {
+        cartCount = 0;
+        document.getElementById("cart-shopping-count").innerHTML = cartCount;
+    } else if( cartCount>0 ){
+        cartCount -= 1;
+        document.getElementById("cart-shopping-count").innerHTML = cartCount;
     }
 }

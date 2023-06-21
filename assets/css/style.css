@@ -36,6 +36,12 @@ ul, li, nav,a {
     color: white;
     font-weight: bold;
 }
+.cart-shopping .cart-shopping-count{
+    position: fixed;
+    top: 20px;
+    right: 14%;
+    color: orange;
+}
 .cart-shopping .shopping-info {
     position: absolute;
     visibility: hidden;
@@ -254,6 +260,9 @@ button:hover{
     }
     .delete-course {
         padding: 5px 10px;
+    }
+    .cart-shopping .cart-shopping-count{
+        right: 12.5%;
     }
     .cart-shopping .shopping-info {
         width: 400px;
