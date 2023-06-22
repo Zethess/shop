@@ -5,6 +5,7 @@ const emptyCartBtn = document.querySelector('#empty-cart');
 const courseList = document.querySelector('#course-list');
 var cartCount = document.getElementById("cart-shopping-count").innerHTML;
 let articlesInCart = [];
+let articlesNumber = 0;
 
 loadEventListeners();
 function loadEventListeners(){
@@ -17,14 +18,16 @@ function loadEventListeners(){
     //Muestra los cursos de Local Storage si no hay nada, no muestra nada. El evento es cuando la pagina se cargo completamente
     document.addEventListener('DOMContentLoaded',()=>{
         articlesInCart = JSON.parse(localStorage.getItem('articlesInCart')) || [];
+        articlesNumber = localStorage.getItem('articlesNumber') || 0;
         cartHTML();
     })
 
     //Vaciar el carrito
     emptyCartBtn.addEventListener('click', ()=>{
         articlesInCart = [];
-        vaciado = true;
-        decreaseCartCount(vaciado);
+        articlesNumber = 0;
+        // vaciado = true;
+        // decreaseCartCount(vaciado);
         cleanCartHTML();
     })
 }
@@ -33,7 +36,7 @@ function courseAdd(e){
 
     // console.log(e.target);
     if( e.target.classList.contains('add-course')){
-        increaseCartCount();
+        // increaseCartCount();
         const selectedCourse = e.target.parentElement.parentElement;
         readCourseInfo( selectedCourse );
 
@@ -46,16 +49,18 @@ function deleteCourse(e) {
         const courseId = e.target.getAttribute('data-id');
         const courseAux = articlesInCart.find(course => course.id === courseId);
         const vaciado = false;
-        decreaseCartCount(vaciado);
+        // decreaseCartCount(vaciado);
         if( courseAux.amount > 1){
             const courseIndex = articlesInCart.findIndex(course => course.id === courseId);
             articlesInCart[courseIndex].amount =  courseAux.amount -1;
+           
             // console.log( articlesInCart[courseIndex]);
         }else{
             //Elimina del arreglo de articlesInCart por el data-id
             //creara un nuevo array, cogiendo todos aquellos elementos que no coincida con lo indicado en el filter
             articlesInCart = articlesInCart.filter( course => course.id !== courseId);
         }
+        articlesNumber --;
         cartHTML();
     }
 }
@@ -92,7 +97,7 @@ function readCourseInfo( course) {
     
 
     console.log(articlesInCart);
-
+    articlesNumber ++;
     cartHTML();
 }
 
@@ -101,38 +106,42 @@ function readCourseInfo( course) {
 function cartHTML(){
     //Limpiar HTML
     cleanCartHTML();
-
-    //Recorre el carrrito y genera el HTML
-    articlesInCart.forEach( course => {
-        const { image, name, price, id, amount} = course;
+    // Recorre el carrrito y genera el HTML
+    for (let i = 0; i < articlesInCart.length; i++) {
+        const course = articlesInCart[i];
+        const { image, name, price, id, amount } = course;
         const row = document.createElement('tr');
-        row.innerHTML= `
+        row.innerHTML = `
             <td>
-                <img src ="${image}" width="80">
+                <img src="${image}" width="80">
             </td>
             <td class="course-price">
                 ${name}
             </td>
-            <td >
+            <td>
                 ${price}
             </td>
             <td class="course-amount">
                 ${amount}
             </td>
             <td>
-                <a href="#" class= "delete-course" data-id="${id}"> X </a>
-        `
-        //Agrega el HTML del carrito en el tbody
+                <a href="#" class="delete-course" data-id="${id}"> X </a>
+            </td>
+        `;
+
+        // Agrega el HTML del carrito en el tbody
         cartContainer.appendChild(row);
-
-    });
-
+    }
     //Agregar el carrito de compras al Storage
     sincronizarStorage();
 }
 
 function sincronizarStorage(){
     localStorage.setItem('articlesInCart',JSON.stringify(articlesInCart));
+    localStorage.setItem('articlesNumber',articlesNumber);
+}
+function cartElementsHTML() {
+    document.getElementById("cart-shopping-count").innerHTML = articlesNumber;
 }
 //Elimina los cursos del tbody
 function cleanCartHTML(){
@@ -140,18 +149,20 @@ function cleanCartHTML(){
     while(cartContainer.firstChild){
         cartContainer.removeChild(cartContainer.firstChild)
     }
+    sincronizarStorage();
+    cartElementsHTML();
 }
 
-function increaseCartCount(){
-    cartCount += 1;
-    document.getElementById("cart-shopping-count").innerHTML = cartCount;
-}
-function decreaseCartCount( vaciar ){
-    if ( vaciar ) {
-        cartCount = 0;
-        document.getElementById("cart-shopping-count").innerHTML = cartCount;
-    } else if( cartCount>0 ){
-        cartCount -= 1;
-        document.getElementById("cart-shopping-count").innerHTML = cartCount;
-    }
-}
+// function increaseCartCount(){
+//     cartCount += 1;
+//     document.getElementById("cart-shopping-count").innerHTML = cartCount;
+// }
+// function decreaseCartCount( vaciar ){
+//     if ( vaciar ) {
+//         cartCount = 0;
+//         document.getElementById("cart-shopping-count").innerHTML = cartCount;
+//     } else if( cartCount>0 ){
+//         cartCount -= 1;
+//         document.getElementById("cart-shopping-count").innerHTML = cartCount;
+//     }
+// }

@@ -37,7 +37,7 @@ ul, li, nav,a {
     font-weight: bold;
 }
 .cart-shopping .cart-shopping-count{
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 14%;
     color: orange;
